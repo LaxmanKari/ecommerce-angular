@@ -17,16 +17,28 @@ export interface user {
   userProfilePicture?: string;
   userPhoneNumber?: string;
   role: string;
-  userProducts?: [string];
-  userPurchases?: [string];
-  userProductSales?: [string];
-  userProductTrades?: [string];
-  userProductWishList?: [string];
-  userProductReview?: [review];
+  userProducts?: string[];
+  userPurchases?: string[];
+  userProductSales?: string[];
+  userProductTrades?: string[];
+  userProductWishList?: string[];
+  userProductReview?: review[];
   userNotifications?: ['notification-object'];
   userSettings?: 'can be an object';
   userCreatedAt?: string;
   userUpdatedAt?: string;
+}
+
+export interface product {
+  productId: string,
+  productName: string,
+  productOwner: user,
+  productDescription: string,
+  productPrice: number,
+  productImage?: string,
+  productReviews?: review[],
+  productCondition: string,
+  productCategory: string
 }
 
 export interface review {

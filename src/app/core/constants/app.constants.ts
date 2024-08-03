@@ -1,4 +1,4 @@
-import { type user } from '../models/app.models';
+import { type product, type user } from '../models/app.models';
 
 export const usersDatabase: user[] = [
   {
@@ -37,3 +37,106 @@ export const usersDatabase: user[] = [
     role: 'user',
   },
 ];
+
+export const products: product[] = [
+  {
+    productId: '123',
+    productName: 'Watch',
+    productOwner: usersDatabase[0],
+    productDescription: 'TIMEWEAR Analog Day Date Functioning Stainless Steel Chain Watch for Men',
+    productPrice: 2500,
+    // productImage: "src\assets\watch-olves.jpg",
+    productCondition: "New",
+    productCategory: "watch"
+  },
+  {
+    productId: '123',
+    productName: 'Watch',
+    productOwner: usersDatabase[0],
+    productDescription: 'Stylish watch',
+    productPrice: 2500,
+    // productImage: "src\assets\watch-olves.jpg",
+    productCondition: "New",
+    productCategory: "watch"
+  },
+  {
+    productId: '123',
+    productName: 'Watch',
+    productOwner: usersDatabase[0],
+    productDescription: 'Stylish watch',
+    productPrice: 2500,
+    // productImage: "src\assets\watch-olves.jpg",
+    productCondition: "New",
+    productCategory: "watch"
+  },
+  {
+    productId: '123',
+    productName: 'Watch',
+    productOwner: usersDatabase[0],
+    productDescription: 'Stylish watch',
+    productPrice: 2500,
+    // productImage: "src\assets\watch-olves.jpg",
+    productCondition: "New",
+    productCategory: "watch"
+  },
+  {
+    productId: '123',
+    productName: 'Watch',
+    productOwner: usersDatabase[0],
+    productDescription: 'Stylish watch',
+    productPrice: 2500,
+    // productImage: "src\assets\watch-olves.jpg",
+    productCondition: "New",
+    productCategory: "watch"
+  },
+  {
+    productId: '123',
+    productName: 'Watch',
+    productOwner: usersDatabase[0],
+    productDescription: 'Stylish watch',
+    productPrice: 2500,
+    // productImage: "src\assets\watch-olves.jpg",
+    productCondition: "New",
+    productCategory: "watch"
+  },
+  {
+    productId: '123',
+    productName: 'Watch',
+    productOwner: usersDatabase[0],
+    productDescription: 'Stylish watch',
+    productPrice: 2500,
+    // productImage: "src\assets\watch-olves.jpg",
+    productCondition: "New",
+    productCategory: "watch"
+  },
+  {
+    productId: '123',
+    productName: 'Watch',
+    productOwner: usersDatabase[0],
+    productDescription: 'Stylish watch',
+    productPrice: 2500,
+    // productImage: "src\assets\watch-olves.jpg",
+    productCondition: "New",
+    productCategory: "watch"
+  },
+  {
+    productId: '123',
+    productName: 'Watch',
+    productOwner: usersDatabase[0],
+    productDescription: 'Stylish watch',
+    productPrice: 2500,
+    // productImage: "src\assets\watch-olves.jpg",
+    productCondition: "New",
+    productCategory: "watch"
+  },
+  {
+    productId: '123',
+    productName: 'Watch',
+    productOwner: usersDatabase[0],
+    productDescription: 'Stylish watch',
+    productPrice: 2500,
+    // productImage: "src\assets\watch-olves.jpg",
+    productCondition: "New",
+    productCategory: "watch"
+  }
+]

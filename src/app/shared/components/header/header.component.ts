@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { RouterLink, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,4 +8,11 @@ import { RouterLink } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  router = inject(Router);
+  logout() {
+    console.log('remove');
+    localStorage.removeItem('loggedInUser');
+    this.router.navigate(['/login']);
+  }
+}
