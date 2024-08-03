@@ -3,6 +3,7 @@ import { LoginComponent } from './pages/auth/login/login.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
 import { HomeComponent } from './pages/home/home.component';
 import { homeRoutes } from '../app/pages/home/home.routes';
+import { authGuard } from './core/guards/auth.guard';
 export const routes: Routes = [
   {
     path: '',
@@ -21,5 +22,6 @@ export const routes: Routes = [
     path: 'home',
     component: HomeComponent,
     children: homeRoutes,
+    canActivate: [authGuard],
   },
 ];

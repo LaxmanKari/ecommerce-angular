@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import {
   loggedInUser,
   type user,
@@ -9,6 +9,7 @@ import { usersDatabase } from '../constants/app.constants';
 @Injectable({ providedIn: 'root' })
 export class AuthService {
   appUsers: user[] = usersDatabase;
+  isAuthenticated = signal(false);
 
   constructor() {
     const localPersistedUsers = localStorage.getItem('users');
@@ -23,6 +24,8 @@ export class AuthService {
       (user) => user.userEmail === loggedUser.userEmail
     );
     if (extractUser) {
+      localStorage.setItem('loggedInUser', JSON.stringify(extractUser));
+      this.isAuthenticated.set(true);
       return extractUser.userPasswordHash === loggedUser.userPassword;
     }
     return false;

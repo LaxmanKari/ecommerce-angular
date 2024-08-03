@@ -4,19 +4,23 @@ import { WishlistComponent } from '../../shared/components/wishlist/wishlist.com
 import { CartComponent } from '../../shared/components/cart/cart.component';
 import { InventoryComponent } from '../../shared/components/inventory/inventory.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { authGuard } from '../../core/guards/auth.guard';
 
 export const homeRoutes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent,
+    canActivate: [authGuard],
   },
   {
     path: 'wishlist',
     component: WishlistComponent,
+    canActivate: [authGuard],
   },
   {
     path: 'cart',
     component: CartComponent,
+    canActivate: [authGuard],
   },
   {
     path: 'inventory',
