@@ -34,7 +34,6 @@ export class RegisterComponent {
     }
     this.isPasswordMatches.set(true);
     if (form.valid) {
-      console.log('form is valid and user is : ', this.user);
       const resgiteryError = this.authService.registerUser(this.user);
       if (resgiteryError !== '') {
         this.throwError.set(resgiteryError);

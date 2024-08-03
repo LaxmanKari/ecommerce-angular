@@ -27,7 +27,7 @@ export class LoginComponent {
     if (form.valid) {
       const hasher = this.authService.validateUser(this.user);
       if (hasher === true) {
-        this.router.navigate(['/home']);
+        this.router.navigate(['/home/dashboard']);
       } else {
         this.errorMessage.set('Please check your Credentials');
       }
