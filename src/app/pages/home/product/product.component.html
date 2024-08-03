@@ -1,14 +1,14 @@
 <div class="products-container">
-  <div class="product-card" *ngFor="let product of productsList">
+  <div class="product-card" *ngFor="let product of productsList()">
     <img src="../../../../assets/sherlocks-homes.jpg" alt="img" />
     <h2 class="product-name">{{ product.productName }}</h2>
     <p class="product-price">Price: {{ product.productPrice }}</p>
     <p class="product-description">{{ product.productDescription }}</p>
     <div class="card-actions">
-      <button class="wishlist-btn">
+      <button class="wishlist-btn" (click)="onWishList(product.productId)">
         ❤️
       </button>
-      <button class="buy-btn">Buy</button>
+      <button class="buy-btn" (click)="onAddToCart(product.productId)">Buy</button>
     </div>
   </div>
 </div>

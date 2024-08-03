@@ -18,6 +18,7 @@ export interface user {
   userPhoneNumber?: string;
   role: string;
   userProducts?: string[];
+  userCart?: string[];
   userPurchases?: string[];
   userProductSales?: string[];
   userProductTrades?: string[];

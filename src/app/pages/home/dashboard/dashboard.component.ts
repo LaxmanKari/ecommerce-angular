@@ -10,5 +10,9 @@ import { ProductsComponent } from '../product/product.component';
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
-
+  
+   
+  filterBykeyword(value: string){
+    console.log(value)
+  }
 }
