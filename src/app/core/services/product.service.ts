@@ -32,8 +32,7 @@ export class ProductService {
 
     if (sortBy === 'price-asc') {
       this.productsData().sort((a, b) => a.productPrice - b.productPrice);
-    }
-    else if (sortBy === 'price-desc') {
+    } else if (sortBy === 'price-desc') {
       this.productsData().sort((a, b) => b.productPrice - a.productPrice);
     }
   }
@@ -57,5 +56,20 @@ export class ProductService {
     }
 
     return this.productsData;
+  }
+
+  sortProductsByCategory(sortByValue: string): WritableSignal<product[]> {
+    console.log(sortByValue)
+    if (sortByValue === 'all') {
+      return this.productsData;
+    }
+    this.filteredProducts.set(
+      this.productsData().filter(
+        (product) =>
+          product.productCategory.toLowerCase() === sortByValue.toLowerCase()
+      )
+    );
+
+    return this.filteredProducts;
   }
 }

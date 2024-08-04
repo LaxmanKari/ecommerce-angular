@@ -11,6 +11,7 @@ import { CommonModule, DatePipe, NgFor } from '@angular/common';
 import { product } from '../../../core/models/app.models';
 import { ProductService } from '../../../core/services/product.service';
 import { UserService } from '../../../core/services/user.service';
+import { productCategories } from '../../../core/constants/app.constants';
 @Component({
   selector: 'app-products',
   standalone: true,
@@ -27,12 +28,12 @@ export class ProductsComponent implements DoCheck {
   productsService = inject(ProductService);
   userService = inject(UserService);
   wishListed = signal(false);
+  categories = productCategories;
 
   private searchKeyword: string | null = null;
   private sortByKeyword: string | null = null;
-  private category: string | null = null;
+  private categoryKeyword: string | null = null;
   private priceRange: string | null = null;
-
 
   ngDoCheck() {
     const newKeyword = this.filterByKeyword();
@@ -42,30 +43,39 @@ export class ProductsComponent implements DoCheck {
         this.filterByKeyword()
       );
     }
-    
+
     const newSortKeyword = this.filterBySort();
     if (this.sortByKeyword !== this.filterBySort()) {
       this.sortByKeyword = newSortKeyword;
-      if(this.filterBySort() === 'price-asc' || this.filterBySort() === 'price-desc'){
-        this.productsService.sortProductsByPrice(
-          this.filterBySort()
-        );
+      if (
+        this.filterBySort() === 'price-asc' ||
+        this.filterBySort() === 'price-desc'
+      ) {
+        this.productsService.sortProductsByPrice(this.filterBySort());
       }
-      if(this.filterBySort() === 'date-added-recent' || this.filterBySort() === 'date-added-old'){
-        this.productsService.sortProductsByDate(
-          this.filterBySort()
-        );
+      if (
+        this.filterBySort() === 'date-added-recent' ||
+        this.filterBySort() === 'date-added-old'
+      ) {
+        this.productsService.sortProductsByDate(this.filterBySort());
       }
- 
     }
-    // if (newKeyword !== this.searchKeyword) {
-    //   this.searchKeyword = newKeyword;
-    //   this.productsList = this.productsService.getProducts(
-    //     this.filterByKeyword()
-    //   );
-    // }
-    // filter based on options selected
-
+    const newCategoryKeyword = this.filterByCategory();
+    console.log('signal value', this.filterByCategory());
+    console.log('keyword value', this.categoryKeyword);
+    if (this.categoryKeyword !== this.filterByCategory()) {
+      console.log('about to call service to filter by category');
+      this.categoryKeyword = newCategoryKeyword;
+      if (
+        this.categories
+          .map((item) => item.toLowerCase())
+          .includes(this.categoryKeyword.toLowerCase())
+      ) {
+        this.productsList = this.productsService.sortProductsByCategory(
+          this.filterByCategory()
+        );
+      }
+    }
   }
 
   productsList: WritableSignal<product[]>;

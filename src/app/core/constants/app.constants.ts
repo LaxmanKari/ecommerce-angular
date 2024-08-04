@@ -48,7 +48,7 @@ export const products: product[] = [
     productPrice: 250,
     // productImage: "src\assets\watch-olves.jpg",
     productCondition: 'New',
-    productCategory: 'watch',
+    productCategory: 'Electronics',
     productDateAdded: '2024-08-04T14:30:00Z',
   },
   {
@@ -59,7 +59,7 @@ export const products: product[] = [
     productPrice: 2100,
     // productImage: "src\assets\watch-olves.jpg",
     productCondition: 'New',
-    productCategory: 'watch',
+    productCategory: 'Sports',
     productDateAdded: '2023-12-15T04:30:00Z',
   },
   {
@@ -70,7 +70,7 @@ export const products: product[] = [
     productPrice: 2200,
     // productImage: "src\assets\watch-olves.jpg",
     productCondition: 'New',
-    productCategory: 'watch',
+    productCategory: 'Sports',
     productDateAdded: '2024-01-04T14:30:00Z',
   },
   {
@@ -81,7 +81,7 @@ export const products: product[] = [
     productPrice: 220,
     // productImage: "src\assets\watch-olves.jpg",
     productCondition: 'New',
-    productCategory: 'watch',
+    productCategory: 'Clothing',
     productDateAdded: '2024-07-04T14:30:00Z',
   },
   {
@@ -92,7 +92,7 @@ export const products: product[] = [
     productPrice: 2980,
     // productImage: "src\assets\watch-olves.jpg",
     productCondition: 'New',
-    productCategory: 'watch',
+    productCategory: 'Clothing',
     productDateAdded: '2021-08-14T14:30:00Z',
   },
   {
@@ -103,7 +103,7 @@ export const products: product[] = [
     productPrice: 120,
     // productImage: "src\assets\watch-olves.jpg",
     productCondition: 'New',
-    productCategory: 'watch',
+    productCategory: 'Home',
     productDateAdded: '2024-01-01T14:30:00Z',
   },
   {
@@ -114,7 +114,7 @@ export const products: product[] = [
     productPrice: 1230,
     // productImage: "src\assets\watch-olves.jpg",
     productCondition: 'New',
-    productCategory: 'watch',
+    productCategory: 'Books',
     productDateAdded: '2024-04-11T14:30:00Z',
   },
   {
@@ -125,7 +125,7 @@ export const products: product[] = [
     productPrice: 2240,
     // productImage: "src\assets\watch-olves.jpg",
     productCondition: 'New',
-    productCategory: 'watch',
+    productCategory: 'Electronics',
     productDateAdded: '2020-08-02T14:30:00Z',
   },
   {
@@ -136,7 +136,7 @@ export const products: product[] = [
     productPrice: 252410,
     // productImage: "src\assets\watch-olves.jpg",
     productCondition: 'New',
-    productCategory: 'watch',
+    productCategory: 'Home',
     productDateAdded: '2024-08-04T14:30:00Z',
   },
   {
@@ -147,7 +147,16 @@ export const products: product[] = [
     productPrice: 4500,
     // productImage: "src\assets\watch-olves.jpg",
     productCondition: 'New',
-    productCategory: 'watch',
+    productCategory: 'Electronics',
     productDateAdded: '2024-08-05T14:30:00Z',
   },
+];
+
+export const productCategories = [
+  'all',
+  'Books',
+  'Home',
+  'Electronics',
+  'Clothing',
+  'Sports',
 ];
