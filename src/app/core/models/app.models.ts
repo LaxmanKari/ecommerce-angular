@@ -31,21 +31,22 @@ export interface user {
 }
 
 export interface product {
-  productId: string,
-  productName: string,
-  productOwner: user,
-  productDescription: string,
-  productPrice: number,
-  productImage?: string,
-  productReviews?: review[],
-  productCondition: string,
-  productCategory: string
+  productId: string;
+  productName: string;
+  productOwner: user;
+  productDescription: string;
+  productPrice: number;
+  productImage?: string;
+  productReviews?: review[];
+  productCondition: string;
+  productCategory: string;
+  productDateAdded: string;
 }
 
 export interface filter {
-  sortBy: string,
-  category: string,
-  priceRange: string
+  sortBy: string;
+  category: string;
+  priceRange: string;
 }
 
 export interface review {

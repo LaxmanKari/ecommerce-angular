@@ -1,9 +1,9 @@
 .filter-container {
-  padding-top: 50px;
   display: flex;
   gap: 15px;
   align-items: center;
   padding: 20px;
+  padding-top: 50px;
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

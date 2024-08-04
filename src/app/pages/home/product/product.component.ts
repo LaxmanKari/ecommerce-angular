@@ -1,23 +1,48 @@
-import { Component, inject, WritableSignal, signal } from '@angular/core';
+import {
+  Component,
+  inject,
+  WritableSignal,
+  signal,
+  Input,
+  DoCheck,
+} from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
-import { CommonModule, NgFor } from '@angular/common';
-import { product, type user } from '../../../core/models/app.models';
+import { CommonModule, DatePipe, NgFor } from '@angular/common';
+import { product } from '../../../core/models/app.models';
 import { ProductService } from '../../../core/services/product.service';
 import { UserService } from '../../../core/services/user.service';
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [MatCardModule, CommonModule, NgFor],
+  imports: [MatCardModule, CommonModule, NgFor, DatePipe],
   templateUrl: './product.component.html',
   styleUrl: './product.component.css',
 })
-export class ProductsComponent {
+export class ProductsComponent implements DoCheck {
+  @Input({ required: true }) filterByKeyword!: WritableSignal<string>;
   productsService = inject(ProductService);
   userService = inject(UserService);
   wishListed = signal(false);
 
-  // usersList: WritableSignal<user[]> = this.userService.getUsers();
-  productsList: WritableSignal<product[]> = this.productsService.getProducts();
+  private keyword: string | null = null;
+
+  ngDoCheck() {
+    const newKeyword = this.filterByKeyword();
+    if (newKeyword !== this.keyword) {
+      this.keyword = newKeyword;
+      console.log('fetch now');
+      this.productsList = this.productsService.getProducts(
+        this.filterByKeyword()
+      );
+      console.log(this.productsList());
+    }
+  }
+
+  productsList: WritableSignal<product[]>;
+
+  constructor() {
+    this.productsList = this.productsService.getProducts('');
+  }
 
   onWishList(itemId: string) {
     this.wishListed.set(true);

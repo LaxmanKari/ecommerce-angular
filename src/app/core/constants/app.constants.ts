@@ -43,11 +43,13 @@ export const products: product[] = [
     productId: '1',
     productName: 'Watch-1',
     productOwner: usersDatabase[0],
-    productDescription: 'TIMEWEAR Analog Day Date Functioning Stainless Steel Chain Watch for Men',
+    productDescription:
+      'TIMEWEAR Analog Day Date Functioning Stainless Steel Chain Watch for Men',
     productPrice: 2500,
     // productImage: "src\assets\watch-olves.jpg",
-    productCondition: "New",
-    productCategory: "watch"
+    productCondition: 'New',
+    productCategory: 'watch',
+    productDateAdded: '2024-08-04T14:30:00Z',
   },
   {
     productId: '12',
@@ -56,8 +58,9 @@ export const products: product[] = [
     productDescription: 'Stylish watch',
     productPrice: 2500,
     // productImage: "src\assets\watch-olves.jpg",
-    productCondition: "New",
-    productCategory: "watch"
+    productCondition: 'New',
+    productCategory: 'watch',
+    productDateAdded: '2023-12-15T04:30:00Z',
   },
   {
     productId: '13',
@@ -66,8 +69,9 @@ export const products: product[] = [
     productDescription: 'Stylish watch',
     productPrice: 2500,
     // productImage: "src\assets\watch-olves.jpg",
-    productCondition: "New",
-    productCategory: "watch"
+    productCondition: 'New',
+    productCategory: 'watch',
+    productDateAdded: '2024-01-04T14:30:00Z',
   },
   {
     productId: '10',
@@ -76,8 +80,9 @@ export const products: product[] = [
     productDescription: 'Stylish watch',
     productPrice: 2500,
     // productImage: "src\assets\watch-olves.jpg",
-    productCondition: "New",
-    productCategory: "watch"
+    productCondition: 'New',
+    productCategory: 'watch',
+    productDateAdded: '2024-07-04T14:30:00Z',
   },
   {
     productId: '23',
@@ -86,8 +91,9 @@ export const products: product[] = [
     productDescription: 'Stylish watch',
     productPrice: 2500,
     // productImage: "src\assets\watch-olves.jpg",
-    productCondition: "New",
-    productCategory: "watch"
+    productCondition: 'New',
+    productCategory: 'watch',
+    productDateAdded: '2021-08-14T14:30:00Z',
   },
   {
     productId: '33',
@@ -96,8 +102,9 @@ export const products: product[] = [
     productDescription: 'Stylish watch',
     productPrice: 2500,
     // productImage: "src\assets\watch-olves.jpg",
-    productCondition: "New",
-    productCategory: "watch"
+    productCondition: 'New',
+    productCategory: 'watch',
+    productDateAdded: '2024-01-01T14:30:00Z',
   },
   {
     productId: '321',
@@ -106,8 +113,9 @@ export const products: product[] = [
     productDescription: 'Stylish watch',
     productPrice: 2500,
     // productImage: "src\assets\watch-olves.jpg",
-    productCondition: "New",
-    productCategory: "watch"
+    productCondition: 'New',
+    productCategory: 'watch',
+    productDateAdded: '2024-04-11T14:30:00Z',
   },
   {
     productId: '145',
@@ -116,8 +124,9 @@ export const products: product[] = [
     productDescription: 'Stylish watch',
     productPrice: 2500,
     // productImage: "src\assets\watch-olves.jpg",
-    productCondition: "New",
-    productCategory: "watch"
+    productCondition: 'New',
+    productCategory: 'watch',
+    productDateAdded: '2020-08-02T14:30:00Z',
   },
   {
     productId: '50',
@@ -126,8 +135,9 @@ export const products: product[] = [
     productDescription: 'Stylish watch',
     productPrice: 2500,
     // productImage: "src\assets\watch-olves.jpg",
-    productCondition: "New",
-    productCategory: "watch"
+    productCondition: 'New',
+    productCategory: 'watch',
+    productDateAdded: '2024-08-04T14:30:00Z',
   },
   {
     productId: '90',
@@ -136,7 +146,8 @@ export const products: product[] = [
     productDescription: 'Stylish watch',
     productPrice: 2500,
     // productImage: "src\assets\watch-olves.jpg",
-    productCondition: "New",
-    productCategory: "watch"
-  }
-]
+    productCondition: 'New',
+    productCategory: 'watch',
+    productDateAdded: '2024-08-05T14:30:00Z',
+  },
+];

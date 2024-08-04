@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { FilterComponent } from '../filter/filter.component';
 import { ProductsComponent } from '../product/product.component';
 import { filter } from '../../../core/models/app.models';
@@ -11,8 +11,9 @@ import { filter } from '../../../core/models/app.models';
   styleUrl: './dashboard.component.css',
 })
 export class DashboardComponent {
+  filterBySearchKeyword = signal('');
   filterBykeyword(value: string) {
-    console.log(value);
+    this.filterBySearchKeyword.set(value);
   }
 
   filters(value: filter) {

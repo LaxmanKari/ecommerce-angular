@@ -1,5 +1,3 @@
-<p>filter works!</p>
-
 <div class="filter-container">
   <div class="filter-group search-group">
     <label for="searchBox" class="filter-label search-label">Search</label>
@@ -15,7 +13,8 @@
     <select id="sortBy" [(ngModel)]="filters.sortBy" class="filter-select">
       <option value="price-asc">Price: Low to High</option>
       <option value="price-desc">Price: High to Low</option>
-      <option value="date-added">Date Added</option>
+      <option value="date-added-recent">Date Added (Recent to old)</option>
+      <option value="date-added-old">Date Added (Old to Recent)</option>
     </select>
   </div>
 

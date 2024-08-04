@@ -3,12 +3,17 @@
     <img src="../../../../assets/sherlocks-homes.jpg" alt="img" />
     <h2 class="product-name">{{ product.productName }}</h2>
     <p class="product-price">Price: {{ product.productPrice }}</p>
+    <p class="product-description">
+      Date Added: {{ product.productDateAdded | date : "dd/MM/yyyy" }}
+    </p>
     <p class="product-description">{{ product.productDescription }}</p>
     <div class="card-actions">
       <button class="wishlist-btn" (click)="onWishList(product.productId)">
         ❤️
       </button>
-      <button class="buy-btn" (click)="onAddToCart(product.productId)">Buy</button>
+      <button class="buy-btn" (click)="onAddToCart(product.productId)">
+        Buy
+      </button>
     </div>
   </div>
 </div>
