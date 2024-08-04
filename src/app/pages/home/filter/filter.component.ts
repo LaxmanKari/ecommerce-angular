@@ -30,7 +30,6 @@ export class FilterComponent {
   }
 
   onFilterButton() {
-    console.log(this.filters);
     this.filterObject.emit(this.filters);
   }
 }

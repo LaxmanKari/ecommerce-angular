@@ -1,4 +1,7 @@
 <div class="products-container">
+  @if(productsList().length === 0){
+    <span>Sorry! No products</span>
+  }
   <div class="product-card" *ngFor="let product of productsList()">
     <img src="../../../../assets/sherlocks-homes.jpg" alt="img" />
     <h2 class="product-name">{{ product.productName }}</h2>

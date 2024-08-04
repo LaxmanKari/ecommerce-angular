@@ -10,8 +10,18 @@ export class ProductService {
     const localPersistedProducts = localStorage.getItem('products');
 
     if (localPersistedProducts) {
-      this.productsData = JSON.parse(localPersistedProducts);
+      const data = JSON.parse(localPersistedProducts);
+      this.productsData.set(data);
+    } else {
+      localStorage.setItem('products', JSON.stringify(this.productsData()));
     }
+  }
+
+  addProduct(newProduct: product): void{
+     this.productsData.update((products) => {
+      return [newProduct, ...products];
+    })
+    localStorage.setItem('products', JSON.stringify(this.productsData()));
   }
 
   getProducts(keyword?: string): WritableSignal<product[]> {
@@ -28,8 +38,6 @@ export class ProductService {
   }
 
   sortProductsByPrice(sortBy: string) {
-    console.log('filtered config inside product service', sortBy);
-
     if (sortBy === 'price-asc') {
       this.productsData().sort((a, b) => a.productPrice - b.productPrice);
     } else if (sortBy === 'price-desc') {
@@ -39,7 +47,6 @@ export class ProductService {
 
   sortProductsByDate(sortBy: string) {
     if (sortBy === 'date-added-recent') {
-      console.log('date');
       this.productsData().sort(
         (a, b) =>
           new Date(b.productDateAdded).getTime() -
@@ -47,7 +54,6 @@ export class ProductService {
       );
     }
     if (sortBy === 'date-added-old') {
-      console.log('date');
       this.productsData().sort(
         (a, b) =>
           new Date(a.productDateAdded).getTime() -
@@ -59,7 +65,6 @@ export class ProductService {
   }
 
   sortProductsByCategory(sortByValue: string): WritableSignal<product[]> {
-    console.log(sortByValue)
     if (sortByValue === 'all') {
       return this.productsData;
     }

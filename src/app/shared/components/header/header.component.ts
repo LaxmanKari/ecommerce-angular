@@ -11,7 +11,6 @@ import { RouterLink, Router } from '@angular/router';
 export class HeaderComponent {
   router = inject(Router);
   logout() {
-    console.log('remove');
     localStorage.removeItem('loggedInUser');
     this.router.navigate(['/login']);
   }

@@ -5,6 +5,7 @@ import { CartComponent } from '../../shared/components/cart/cart.component';
 import { InventoryComponent } from '../../shared/components/inventory/inventory.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { authGuard } from '../../core/guards/auth.guard';
+import { NewProductComponent } from './new-product/new-product.component';
 
 export const homeRoutes: Routes = [
   {
@@ -30,4 +31,8 @@ export const homeRoutes: Routes = [
     path: 'dashboard',
     component: DashboardComponent,
   },
+  {
+    path: 'add',
+    component: NewProductComponent
+  }
 ];

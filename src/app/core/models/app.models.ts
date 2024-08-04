@@ -24,8 +24,8 @@ export interface user {
   userProductTrades?: string[];
   userProductWishList?: string[];
   userProductReview?: review[];
-  userNotifications?: ['notification-object'];
-  userSettings?: 'can be an object';
+  userNotifications?: [];
+  userSettings?: [];
   userCreatedAt?: string;
   userUpdatedAt?: string;
 }
@@ -33,7 +33,7 @@ export interface user {
 export interface product {
   productId: string;
   productName: string;
-  productOwner: user;
+  productOwner: string;
   productDescription: string;
   productPrice: number;
   productImage?: string;

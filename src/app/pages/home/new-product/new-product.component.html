@@ -1,0 +1,38 @@
+<div class="container">
+    <h1 class="page-title">Add New Product </h1>
+    <form class="product-form">
+        <div class="form-group">
+            <label for="product-name">Product Name</label>
+            <input type="text" [(ngModel)]="newProduct.productName" id="product-name" name="product-name" required>
+        </div>
+        <div class="form-group">
+            <label for="price">Price:</label>
+            <input type="number" [(ngModel)]="newProduct.productPrice" id="price" name="price" required>
+        </div>
+        <div class="form-group">
+            <label for="category">Category:</label>
+            <select name="category" id="category" [(ngModel)]="newProduct.productCategory">
+                <option value="home">Home</option>
+                <option value="books">Books</option>
+                <option value="electronics">Electronics</option>
+                <option value="sports">Sports</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea name="description" id="description" [(ngModel)]="newProduct.productDescription" rows="4" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="image-upload">Image Upload:</label>
+            <input type="file" id="image-upload" name="image-upload" accept="image/*">
+        </div>
+        <div class="form-group">
+            <label for="condition">Condition:</label>
+            <select name="category" id="category" [(ngModel)]="newProduct.productCondition">
+                <option value="new">New</option>
+                <option value="old">Old</option>
+            </select>
+        </div>
+        <button type="submit" class="submit-btn" (click)="submit()">Add</button>
+    </form>
+</div>

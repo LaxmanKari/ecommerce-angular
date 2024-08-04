@@ -18,6 +18,19 @@ export class UserService {
     return this.usersData;
   }
 
+  updateLocalUserAppData(userInput: user) {
+    localStorage.setItem('loggedInUserAppData', JSON.stringify(userInput));
+  }
+
+  updateUserProducts(userInput: string, productId: string) {
+    const user: user = JSON.parse(userInput);
+    const userIndex = this.usersData.findIndex(
+      (u) => u.userEmail === user.userEmail
+    );
+    this.usersData[userIndex]?.userProducts?.push(productId);
+    this.updateLocalUserAppData(this.usersData[userIndex]);
+  }
+
   updateWishList(mail: string, productId: string) {
     const userIndex = this.usersData.findIndex((u) => u.userEmail === mail);
     if (this.usersData[userIndex].userProductWishList === undefined) {

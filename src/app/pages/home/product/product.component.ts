@@ -61,10 +61,7 @@ export class ProductsComponent implements DoCheck {
       }
     }
     const newCategoryKeyword = this.filterByCategory();
-    console.log('signal value', this.filterByCategory());
-    console.log('keyword value', this.categoryKeyword);
     if (this.categoryKeyword !== this.filterByCategory()) {
-      console.log('about to call service to filter by category');
       this.categoryKeyword = newCategoryKeyword;
       if (
         this.categories
