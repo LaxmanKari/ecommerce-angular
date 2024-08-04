@@ -1,2 +1,5 @@
-<app-filter (searchKeyword)="filterBykeyword($event)"/>
-<app-products/>
+<app-filter
+  (searchKeyword)="filterBykeyword($event)"
+  (filterObject)="filters($event)"
+/>
+<app-products />

@@ -1,5 +1,49 @@
 <p>filter works!</p>
 
 <div class="filter-container">
-    <input type="text" (input)="onInputChange($event)"/>
+  <div class="filter-group search-group">
+    <label for="searchBox" class="filter-label search-label">Search</label>
+    <input
+      type="text"
+      id="searchBox"
+      class="filter-input search-input"
+      (input)="onInputChange($event)"
+    />
+  </div>
+  <div class="filter-group filters-group">
+    <label for="sortBy" class="filter-label">Sort By:</label>
+    <select id="sortBy" [(ngModel)]="filters.sortBy" class="filter-select">
+      <option value="price-asc">Price: Low to High</option>
+      <option value="price-desc">Price: High to Low</option>
+      <option value="date-added">Date Added</option>
+    </select>
+  </div>
+
+  <div class="filter-group">
+    <label for="category" class="filter-label">Category</label>
+    <select id="category" [(ngModel)]="filters.category" class="filter-select">
+      <option value="all">All Categories</option>
+      <option value="electronics">Electronics</option>
+      <option value="books">Books</option>
+      <option value="clothing">Clothing</option>
+      <option value="home">Home</option>
+    </select>
+  </div>
+
+  <div class="filter-group">
+    <label for="priceRange" class="filter-label">Price Range:</label>
+    <input
+      type="text"
+      id="priceRange"
+      class="filter-input"
+      placeholder="Ex: 0-500 Rs"
+      (input)="onPriceRangeChange($event)"
+    />
+  </div>
+
+  <div class="filter-group">
+    <button class="filter-button" (click)="onFilterButton()">
+      ApplyFilter
+    </button>
+  </div>
 </div>

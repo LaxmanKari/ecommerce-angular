@@ -42,6 +42,12 @@ export interface product {
   productCategory: string
 }
 
+export interface filter {
+  sortBy: string,
+  category: string,
+  priceRange: string
+}
+
 export interface review {
   reviewId: string;
   productId: string;
