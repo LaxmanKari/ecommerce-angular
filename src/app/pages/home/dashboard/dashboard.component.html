@@ -2,4 +2,9 @@
   (searchKeyword)="filterBykeyword($event)"
   (filterObject)="filters($event)"
 />
-<app-products [filterByKeyword]="filterBySearchKeyword" />
+<app-products
+  [filterByKeyword]="filterBySearchKeyword"
+  [filterBySort]="filterBySort"
+  [filterByCategory]="filterByCategory"
+  [filterByPriceRange]="filterByPriceRange"
+/>

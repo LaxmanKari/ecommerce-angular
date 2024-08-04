@@ -12,11 +12,18 @@ import { filter } from '../../../core/models/app.models';
 })
 export class DashboardComponent {
   filterBySearchKeyword = signal('');
+  filterBySort = signal('');
+  filterByCategory = signal('');
+  filterByPriceRange = signal('');
+
+
   filterBykeyword(value: string) {
     this.filterBySearchKeyword.set(value);
   }
 
   filters(value: filter) {
-    console.log(value);
+    this.filterBySort.set(value.sortBy);
+    this.filterByCategory.set(value.category);
+    this.filterByPriceRange.set(value.priceRange);
   }
 }

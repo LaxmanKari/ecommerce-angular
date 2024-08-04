@@ -16,17 +16,46 @@ export class ProductService {
 
   getProducts(keyword?: string): WritableSignal<product[]> {
     if (keyword) {
-      console.log('keyword : ', keyword);
       const pattern = new RegExp(`^${keyword}`, 'i');
       const filtered = this.productsData().filter((product) =>
         pattern.test(product.productName)
       );
-      console.log('filtered inside service : ', filtered);
       this.filteredProducts.set(filtered);
       return this.filteredProducts;
     } else {
-      console.log('product service', keyword);
       return this.productsData;
     }
+  }
+
+  sortProductsByPrice(sortBy: string) {
+    console.log('filtered config inside product service', sortBy);
+
+    if (sortBy === 'price-asc') {
+      this.productsData().sort((a, b) => a.productPrice - b.productPrice);
+    }
+    else if (sortBy === 'price-desc') {
+      this.productsData().sort((a, b) => b.productPrice - a.productPrice);
+    }
+  }
+
+  sortProductsByDate(sortBy: string) {
+    if (sortBy === 'date-added-recent') {
+      console.log('date');
+      this.productsData().sort(
+        (a, b) =>
+          new Date(b.productDateAdded).getTime() -
+          new Date(a.productDateAdded).getTime()
+      );
+    }
+    if (sortBy === 'date-added-old') {
+      console.log('date');
+      this.productsData().sort(
+        (a, b) =>
+          new Date(a.productDateAdded).getTime() -
+          new Date(b.productDateAdded).getTime()
+      );
+    }
+
+    return this.productsData;
   }
 }
