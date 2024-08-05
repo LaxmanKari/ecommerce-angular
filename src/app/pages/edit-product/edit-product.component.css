@@ -1,0 +1,70 @@
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    padding-top: 50px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  dialog {
+    width: 90%; 
+    max-width: 30rem;
+    border-radius: 6px; 
+    border: none; 
+    overflow: hidden;
+    padding: 1rem;
+    top:5rem;
+  }
+  
+  .page-title {
+    text-align: center;
+    color: #6c63ff;
+    margin-bottom: 20px;
+  }
+  
+  .product-form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+      display: block;
+      font-weight: bold; 
+      margin-bottom: 5px; 
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="number"],
+  .form-group textarea,
+  .form-group select {
+      width: 100%; 
+      padding: 10px; 
+      border: 1px solid #ddd;
+      border-radius: 5px; 
+      box-sizing: border-box;
+  }
+  
+  .form-group input[type="file"]{
+      padding: 3px; 
+  }
+  
+  .submit-btn {
+      background-color: #6c63ff;
+      color: #fff; 
+      border: none; 
+      padding: 10px 20px;
+      border-radius: 5px; 
+      cursor: pointer; 
+      font-size: 16px;
+      font-weight: bold;
+  }
+  
+  .submit-btn:hover {
+      background-color: #5a54d1;
+  }

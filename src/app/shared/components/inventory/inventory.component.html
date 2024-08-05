@@ -1,25 +1,30 @@
-<div class="inventory-container">
-  <div class="fancy-heading">Inventory</div>
-  <div class="product-list">
-    <div class="product-card" *ngFor="let product of userInventoryProducts()">
-      <img
-        src="../../../../assets/sherlocks-homes.jpg"
-        class="product-image"
-        alt="img-product"
-      />
-      <div class="product-details">
-        <h3 class="product-name">{{ product.productName }}</h3>
-        <p class="product-price">{{ product.productPrice }}</p>
-        <p class="product-description">{{ product.productDescription }}</p>
-        <p class="product-category">{{ product.productCategory }}</p>
-      </div>
-
-      <div class="button-container">
-        <button class="view-button">Edit</button>
-        <button class="delete-button" (click)="onDelete(product.productId)">
-          Delete
-        </button>
+@if(enableEditingDialog()){
+  <app-edit-product [id]="id()" [dialogState]="enableEditingDialog" (productUpdated)="onProductUpdated()"/>
+}
+@else {
+  <div class="inventory-container">
+    <div class="fancy-heading">Inventory</div>
+    <div class="product-list">
+      <div class="product-card" *ngFor="let product of userInventoryProducts()">
+        <img
+          src="../../../../assets/sherlocks-homes.jpg"
+          class="product-image"
+          alt="img-product"
+        />
+        <div class="product-details">
+          <h3 class="product-name">{{ product.productName }}</h3>
+          <p class="product-price">{{ product.productPrice }}</p>
+          <p class="product-description">{{ product.productDescription }}</p>
+          <p class="product-category">{{ product.productCategory }}</p>
+        </div>
+  
+        <div class="button-container">
+          <button class="view-button" (click)="onEdit(product.productId)">Edit</button>
+          <button class="delete-button" (click)="onDelete(product.productId)">
+            Delete
+          </button>
+        </div>
       </div>
     </div>
   </div>
-</div>
+}

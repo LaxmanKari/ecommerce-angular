@@ -24,6 +24,20 @@ export class ProductService {
     localStorage.setItem('products', JSON.stringify(this.productsData()));
   }
 
+  updateProduct(newProduct: product, id: string){
+    const currentProducts = this.productsData(); 
+    const updatedProducts = currentProducts.map(product => 
+      product.productId === id ? {...product, ...newProduct} : product
+    )
+    this.productsData.set(updatedProducts);
+    localStorage.setItem('products', JSON.stringify(this.productsData()));
+  }
+
+  getProductById(id: string){
+    const currentProducts = this.productsData();
+    return currentProducts.find(product => product.productId === id);
+  }
+
   removeProduct(id: string) {
     this.productsData.set(
       this.productsData().filter((product) => product.productId !== id)

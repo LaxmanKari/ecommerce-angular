@@ -1,0 +1,55 @@
+<p>{{ id }}</p>
+
+<dialog open>
+  <div class="container">
+    <h1 class="page-title">Edit Product</h1>
+    <form class="product-form">
+      <div class="form-group">
+        <label for="product-name">Product Name</label>
+        <input
+          type="text"
+          id="product-name"
+          [(ngModel)]="editProductData().productName"
+          value="editProductData().productName"
+          name="product-name"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="price">Price:</label>
+        <input
+          type="number"
+          [(ngModel)]="editProductData().productPrice"
+          id="price"
+          name="price"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="category">Category:</label>
+        <select
+          name="category"
+          id="category"
+          [(ngModel)]="editProductData().productCategory"
+        >
+          <option value="home">Home</option>
+          <option value="books">Books</option>
+          <option value="electronics">Electronics</option>
+          <option value="sports">Sports</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea
+          name="description"
+          [(ngModel)]="editProductData().productDescription"
+          id="description"
+          rows="4"
+          required
+        ></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn" (click)="onSave()">Save</button>
+    </form>
+  </div>
+</dialog>
