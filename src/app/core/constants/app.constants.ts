@@ -101,7 +101,7 @@ export const usersDatabase: user[] = [
 export const products: product[] = [
   {
     productId: '1',
-    productName: 'Watch-1',
+    productName: 'Watch',
     productOwner: usersDatabase[0].userEmail,
     productDescription:
       'TIMEWEAR Analog Day Date Functioning Stainless Steel Chain Watch for Men',
@@ -113,7 +113,7 @@ export const products: product[] = [
   },
   {
     productId: '12',
-    productName: 'Watch-12',
+    productName: 'Shoes',
     productOwner: usersDatabase[0].userEmail,
     productDescription: 'Stylish watch',
     productPrice: 2100,
@@ -124,7 +124,7 @@ export const products: product[] = [
   },
   {
     productId: '13',
-    productName: 'Watch-13',
+    productName: 'Badminton Racket',
     productOwner: usersDatabase[1].userEmail,
     productDescription: 'Stylish watch',
     productPrice: 2200,
@@ -135,7 +135,7 @@ export const products: product[] = [
   },
   {
     productId: '10',
-    productName: 'Watch-10',
+    productName: 'Hoddy',
     productOwner: usersDatabase[1].userEmail,
     productDescription: 'Stylish watch',
     productPrice: 220,
@@ -146,7 +146,7 @@ export const products: product[] = [
   },
   {
     productId: '23',
-    productName: 'Watch-23',
+    productName: 'Pant',
     productOwner: usersDatabase[2].userEmail,
     productDescription: 'Stylish watch',
     productPrice: 2980,
@@ -157,7 +157,7 @@ export const products: product[] = [
   },
   {
     productId: '33',
-    productName: 'Watch-33',
+    productName: 'Table',
     productOwner: usersDatabase[2].userEmail,
     productDescription: 'Stylish watch',
     productPrice: 120,
@@ -168,7 +168,7 @@ export const products: product[] = [
   },
   {
     productId: '321',
-    productName: 'Watch-321',
+    productName: 'Computer systems',
     productOwner: usersDatabase[3].userEmail,
     productDescription: 'Stylish watch',
     productPrice: 1230,
@@ -179,7 +179,7 @@ export const products: product[] = [
   },
   {
     productId: '145',
-    productName: 'Watch-145',
+    productName: 'IPhone 15',
     productOwner: usersDatabase[3].userEmail,
     productDescription: 'Stylish watch',
     productPrice: 2240,
@@ -190,7 +190,7 @@ export const products: product[] = [
   },
   {
     productId: '50',
-    productName: 'Watch-50',
+    productName: 'Chair',
     productOwner: usersDatabase[0].userEmail,
     productDescription: 'Stylish watch',
     productPrice: 252410,
@@ -201,7 +201,7 @@ export const products: product[] = [
   },
   {
     productId: '90',
-    productName: 'Watch-90',
+    productName: 'IWatch',
     productOwner: usersDatabase[0].userEmail,
     productDescription: 'Stylish watch',
     productPrice: 4500,

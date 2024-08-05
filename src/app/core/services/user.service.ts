@@ -19,7 +19,16 @@ export class UserService {
   }
 
   updateLocalUserAppData(userInput: user) {
-    localStorage.setItem('loggedInUserAppData', JSON.stringify(userInput));
+    localStorage.setItem('loggedInUser', JSON.stringify(userInput));
+  }
+
+  updateProductAddedInfoInDB(userIndex: number, productId: string) {
+    const users = localStorage.getItem('users');
+    if (users) {
+      const usersLocalData = JSON.parse(users);
+      usersLocalData[userIndex].userProducts.push(productId);
+      localStorage.setItem('users', JSON.stringify(usersLocalData));
+    }
   }
 
   updateUserProducts(userInput: string, productId: string) {
@@ -29,6 +38,7 @@ export class UserService {
     );
     this.usersData[userIndex]?.userProducts?.push(productId);
     this.updateLocalUserAppData(this.usersData[userIndex]);
+    this.updateProductAddedInfoInDB(userIndex, productId);
   }
 
   updateWishList(mail: string, productId: string) {

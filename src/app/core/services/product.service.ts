@@ -17,10 +17,17 @@ export class ProductService {
     }
   }
 
-  addProduct(newProduct: product): void{
-     this.productsData.update((products) => {
+  addProduct(newProduct: product): void {
+    this.productsData.update((products) => {
       return [newProduct, ...products];
-    })
+    });
+    localStorage.setItem('products', JSON.stringify(this.productsData()));
+  }
+
+  removeProduct(id: string) {
+    this.productsData.set(
+      this.productsData().filter((product) => product.productId !== id)
+    );
     localStorage.setItem('products', JSON.stringify(this.productsData()));
   }
 
@@ -35,6 +42,37 @@ export class ProductService {
     } else {
       return this.productsData;
     }
+  }
+
+  getUserInventory(): WritableSignal<product[]> {
+    const loggedInUser = localStorage.getItem('loggedInUser');
+    let items: string[] = [];
+    let userProducts: product[] = [];
+    if (loggedInUser) {
+      const user = JSON.parse(loggedInUser);
+      items = user.userProducts;
+      userProducts = this.productsData().filter((product) =>
+        items.includes(product.productId)
+      );
+      this.filteredProducts.set(userProducts);
+    }
+    return this.filteredProducts;
+  }
+
+  removeProductFromUserInventory(id: string) {
+    const loggedInUser = localStorage.getItem('loggedInUser');
+    let items: string[] = [];
+    if (loggedInUser) {
+      const user = JSON.parse(loggedInUser);
+      items = user.userProducts;
+      items = items.filter((i) => i !== id);
+      user.userProducts = items;
+      localStorage.setItem('loggedInUser', JSON.stringify(user));
+    }
+    this.removeProduct(id);
+    return this.productsData().filter((product) =>
+      items.includes(product.productId)
+    );
   }
 
   sortProductsByPrice(sortBy: string) {
