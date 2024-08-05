@@ -13,10 +13,14 @@ export class AuthService {
 
   constructor() {
     const localPersistedUsers = localStorage.getItem('users');
-
+    const userLoggedIn = localStorage.getItem('loggedInUser');
     if (localPersistedUsers) {
       this.appUsers = JSON.parse(localPersistedUsers);
     }
+    if (userLoggedIn) {
+      this.isAuthenticated.set(true);
+    }
+    
   }
 
   validateUser(loggedUser: loggedInUser) {

@@ -26,13 +26,16 @@ export const homeRoutes: Routes = [
   {
     path: 'inventory',
     component: InventoryComponent,
+    canActivate: [authGuard],
   },
   {
     path: 'dashboard',
     component: DashboardComponent,
+    canActivate: [authGuard],
   },
   {
     path: 'add',
-    component: NewProductComponent
+    component: NewProductComponent,
+    canActivate: [authGuard],
   }
 ];
