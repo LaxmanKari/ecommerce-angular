@@ -46,6 +46,10 @@ export class AuthService {
         userEmail: loggedUser.userEmail,
         userPasswordHash: loggedUser.userPassword,
         role: 'user',
+        userProducts: [],
+        userCart: [],
+        userPurchases: [],
+        userProductWishList: [],
       };
       this.appUsers = [...this.appUsers, newUser];
       localStorage.setItem('users', JSON.stringify(this.appUsers));
